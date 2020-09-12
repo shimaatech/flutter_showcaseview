@@ -225,7 +225,7 @@ class _ToolTipWidgetState extends State<ToolTipWidget> {
                                           )
                                         : Container(),
                                     Container(
-                                      height: 20,
+                                      height: 100,
                                       child: Flexible(
                                         child: Text(
                                           widget.description,
