@@ -87,12 +87,18 @@ class _ToolTipWidgetState extends State<ToolTipWidget> {
   }
 
   double _getTooltipWidth() {
+    double tooltipWidth;
     double titleLength = widget.title == null ? 0 : widget.title.length * 10.0;
     double descriptionLength = widget.description.length * 7.0;
     if (titleLength > descriptionLength) {
-      return titleLength + 10;
+      tooltipWidth = titleLength + 10;
     } else {
-      return descriptionLength + 10;
+      tooltipWidth = descriptionLength + 10;
+    }
+    if (tooltipWidth < widget.screenSize.width) {
+      return tooltipWidth;
+    } else {
+      return widget.screenSize.width;
     }
   }
 
@@ -224,16 +230,21 @@ class _ToolTipWidgetState extends State<ToolTipWidget> {
                                                             widget.textColor)),
                                           )
                                         : Container(),
-                                    SingleChildScrollView(
-                                      scrollDirection: Axis.horizontal,
-                                      child: Text(
-                                        widget.description,
-                                        style: widget.descTextStyle ??
-                                            Theme.of(context)
-                                                .textTheme
-                                                .subtitle2
-                                                .merge(TextStyle(
-                                                    color: widget.textColor)),
+                                    Container(
+                                      child: Row(
+                                        children: [
+                                          Expanded(
+                                            child: Text(
+                                              widget.description,
+                                              style: widget.descTextStyle ??
+                                                  Theme.of(context)
+                                                      .textTheme
+                                                      .subtitle2
+                                                      .merge(TextStyle(
+                                                          color: widget.textColor)),
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ],
