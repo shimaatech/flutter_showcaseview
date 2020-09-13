@@ -126,7 +126,7 @@ class _ToolTipWidgetState extends State<ToolTipWidget> {
     } else if (!(_isRight())) {
       return widget.position.getCenter() - (_getTooltipWidth() * 0.5);
     } else {
-      return 8;
+      return null;
     }
   }
 
@@ -141,7 +141,7 @@ class _ToolTipWidgetState extends State<ToolTipWidget> {
     } else if (!(_isLeft())) {
       return widget.position.getCenter() - (_getTooltipWidth() * 0.5);
     } else {
-      return 8;
+      return null;
     }
   }
 
@@ -231,6 +231,7 @@ class _ToolTipWidgetState extends State<ToolTipWidget> {
                                           )
                                         : Container(),
                                     Container(
+                                      padding: EdgeInsets.all(5.0),
                                       child: Row(
                                         children: [
                                           Expanded(
