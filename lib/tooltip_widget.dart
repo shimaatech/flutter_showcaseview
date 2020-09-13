@@ -230,21 +230,15 @@ class _ToolTipWidgetState extends State<ToolTipWidget> {
                                                             widget.textColor)),
                                           )
                                         : Container(),
-                                    Container(
-                                      child: Row(
-                                        children: [
-                                          Expanded(
-                                            child: Text(
-                                              widget.description,
-                                              style: widget.descTextStyle ??
-                                                  Theme.of(context)
-                                                      .textTheme
-                                                      .subtitle2
-                                                      .merge(TextStyle(
-                                                          color: widget.textColor)),
-                                            ),
-                                          ),
-                                        ],
+                                    Flexible(
+                                      child: Text(
+                                        widget.description,
+                                        style: widget.descTextStyle ??
+                                            Theme.of(context)
+                                                .textTheme
+                                                .subtitle2
+                                                .merge(TextStyle(
+                                                    color: widget.textColor)),
                                       ),
                                     ),
                                   ],
