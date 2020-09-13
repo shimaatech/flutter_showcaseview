@@ -126,7 +126,7 @@ class _ToolTipWidgetState extends State<ToolTipWidget> {
     } else if (!(_isRight())) {
       return widget.position.getCenter() - (_getTooltipWidth() * 0.5);
     } else {
-      return null;
+      return 8;
     }
   }
 
