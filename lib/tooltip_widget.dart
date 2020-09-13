@@ -95,10 +95,10 @@ class _ToolTipWidgetState extends State<ToolTipWidget> {
     } else {
       tooltipWidth = descriptionLength + 10;
     }
-    if (tooltipWidth < widget.screenSize.width) {
+    if (tooltipWidth < widget.screenSize.width - 30) {
       return tooltipWidth;
     } else {
-      return widget.screenSize.width;
+      return widget.screenSize.width - 30;
     }
   }
 
